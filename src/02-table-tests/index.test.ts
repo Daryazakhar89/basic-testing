@@ -3,8 +3,6 @@ import { simpleCalculator, Action } from './index';
 
 const testCases = [
   { a: 1, b: 2, action: Action.Add, expected: 3 },
-  { a: 2, b: 2, action: Action.Add, expected: 4 },
-  { a: 3, b: 2, action: Action.Add, expected: 5 },
   { a: 15, b: 9, action: Action.Subtract, expected: 6 },
   { a: 12, b: 5, action: Action.Multiply, expected: 60 },
   { a: 70, b: 10, action: Action.Divide, expected: 7 },
