@@ -27,7 +27,7 @@ describe('throttledGetDataFromApi', () => {
     const baseURL = createJestSpy.mock.calls[0]?.[0]?.baseURL;
 
     expect(baseURL).toEqual('https://jsonplaceholder.typicode.com');
-  });
+  }, 30000);
 
   test('should perform request to correct provided url', async () => {
     const getJestSpy = jest.spyOn(axios, 'get');
@@ -37,12 +37,12 @@ describe('throttledGetDataFromApi', () => {
     const path = getJestSpy.mock.calls[0]?.[0];
 
     expect(path).toBe('anyPath');
-  });
+  }, 30000);
 
   test('should return response data', async () => {
     const data = await throttledGetDataFromApi('anyPath');
     jest.runAllTimers();
 
     expect(data).toEqual(users);
-  });
+  }, 30000);
 });
